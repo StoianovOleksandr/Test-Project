@@ -1,4 +1,4 @@
-@layer reset, base, layout, components, utility;
+@layer reset, base, layout, components, tablet, mobile;
 
 @layer reset {
     * {
@@ -59,6 +59,8 @@
     }
     main {
         padding-block-start: 67px;
+        padding-block-end: 130px;
+        /* border: #686868 1px solid; */
     }
 }
 
@@ -84,6 +86,7 @@
     }
     .hero {
         column-gap: 125px;
+        /* border: #de5c5c 1px solid; */
         p {
             max-width: 445px;
             font-size: 18px;
@@ -92,11 +95,20 @@
         }
     }
     .hero-info {
+        min-height: 535px;
+        /* border: #4199b1 1px solid; */
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         div:first-child {
             flex-direction: column;
             align-items: flex-start;
             row-gap: 48px;
             max-width: 540px;
+        }
+        div:last-child {
+            column-gap: 40px;
         }
     }
 }
@@ -171,3 +183,28 @@
         background-repeat: no-repeat;
         }
 }
+
+@layer tablet {
+    @media (max-width: 1200px) {
+        .container {
+            max-width: 768px;
+        }        
+        .hero {
+            flex-direction: column-reverse;
+            align-items: center;
+            row-gap: 50px;
+        }
+        .hero-info {
+            align-self: center;
+        }    
+        div:last-child {
+            justify-content: space-between;
+        }    
+    }
+}
+/* 
+@layer mobile {
+    @media (max-width: 768px) {
+               
+    }
+} */
